@@ -7,6 +7,7 @@ gem 'protected_attributes', '1.0.7'
 gem 'bcrypt-ruby','3.1.5'
 gem 'will_paginate','3.0.5'
 gem 'bootstrap-will_paginate','0.0.10'
+gem 'slim-rails'
 
 # Use sqlite3 as the database for Active Record
 group :development do
