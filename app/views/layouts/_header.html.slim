@@ -1,27 +1,31 @@
 header class="navbar navbar-inverse navbar-static-top"
 	div class="navbar-inner"
-		div class="container-fluid"
-			h2.pull-left
+		div class="container"
+			button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar"
+				span class="icon-bar"
+				span class="icon-bar"
+				span class="icon-bar"
+			h2.navbar-left.no-padding-margin
 				small
-					= link_to Setting.first.sitetitle, "#", class: "navbar-brand pull-left"
-			nav 
-				ul class="nav pull-right"
-					li 
+					= link_to Setting.first.sitetitle, root_path, class: "navbar-brand"
+			nav class="collapse navbar-collapse navbar-right" id="navbar"
+				ul class="nav navbar-nav navbar-right"
+					li class=(is_active?('',yield(:title)) ? 'active' : 'inactive')
 						a href=root_path HOME
-					li 
-						a href="#" RESUME
+					li class=(is_active?('RESUME',yield(:title)) ? 'active' : 'inactive') 
+						a href=resume_path RESUME
 					li id="fat-menu" class="dropdown" 
 						a href="#" class="dropdown-toggle" data-toggle="dropdown" PORTFOLIO<b class="caret"></b>
 						ul class="dropdown-menu"
 							li 
 								a href="#" PHOTOGRAPHY
 							li 
-								a href="#" VIDEO
+								a href="#" VIDEO PRODUCTION
 							li 
-								a href="#" WEB
+								a href="#" WEB DEVELOPMENT
 
-					li 
+					li class=(is_active?('CONTACT',yield(:title)) ? 'active' : 'inactive')
 						a href="#" CONTACT
-					li 
+					li class=(is_active?('BLOG',yield(:title)) ? 'active' : 'inactive')
 						a href="#" BLOG
 						

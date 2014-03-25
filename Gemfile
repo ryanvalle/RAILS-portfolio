@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
-gem "bootstrap-sass", "2.3.0.1"
+gem "bootstrap-sass", "3.1.1.0"
 gem 'protected_attributes', '1.0.7'
 gem 'bcrypt-ruby','3.1.5'
 gem 'will_paginate','3.0.5'
 gem 'bootstrap-will_paginate','0.0.10'
-gem 'slim-rails'
+gem 'slim-rails', '2.1.2'
 
 # Use sqlite3 as the database for Active Record
 group :development do

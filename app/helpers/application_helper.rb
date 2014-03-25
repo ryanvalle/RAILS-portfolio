@@ -5,7 +5,13 @@ module ApplicationHelper
 		if title.empty?
 			base_title
 		else
-			base_title+' | '+title
+			"#{base_title} | #{title}"
+		end
+	end
+
+	def is_active?(title,page_title)
+		if title == page_title
+			true
 		end
 	end
 
