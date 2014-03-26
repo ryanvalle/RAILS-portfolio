@@ -1,0 +1,44 @@
+= provide(:title,'PORTFOLIO')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+- flash.each do |key,value|
+	= content_tag(:div, value, class:"alert alert-#{key}")
+
+section
+	div.container
+		div.col-sm-12
+			img.pull-left style="width: 50px;" src="assets/icon_photography.png"
+			h3.some-padding-no-margin-2
+				strong Photography
+		= render partial: 'recentphotography'
+		p.pull-right 
+			= link_to "View All", photography_path, class:"pull-right"
+	div.divider
+section
+	div.container
+		div.col-sm-12
+			img.pull-left style="width: 50px;" src="assets/icon_video.png"
+			h3.some-padding-no-margin-2
+				strong Video Production
+		= render partial: 'recentvideo'
+		p.pull-right 
+			= link_to "View All", video_path, class:"pull-right"
+	div.divider
+section
+	div.container
+		div.col-sm-12
+			img.pull-left style="width: 50px;" src="assets/icon_webdevelopment.png"
+			h3.some-padding-no-margin-2
+				strong Web Development
+		= render partial: 'recentweb'
+		p.pull-right 
+			= link_to "View All", web_path, class:"pull-right"
+	div.divider
+	
+	
+

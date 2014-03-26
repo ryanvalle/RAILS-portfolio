@@ -1,0 +1,31 @@
+= provide(:title,"ADMIN - CREATE")
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+section
+	div.container
+		p Use the following form to add new portfolio content to the site
+		div.divider
+		= render partial: 'shared/errors'
+		= form_for(@portfolio, :html => {class:"form-horizontal"}) do |f| 
+			= f.label :title
+			= f.text_field :title, class:"form-control"
+			br
+			= f.label :description
+			= f.text_area :description, class:"form-control"
+			br
+			= f.label :location
+			= f.text_field :location, class:"form-control"
+			br
+			= f.label :mediatype
+				| Media Type
+			= f.select :mediatype, options_for_select([ "", "Photography","Web","Video"]), class:"form-control"
+			br
+			= f.label :publish
+			= f.check_box :publish
+			br
+			= f.submit "Save", class:"pull-right"
+			br

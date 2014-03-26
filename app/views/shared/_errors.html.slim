@@ -1,0 +1,8 @@
+- if @portfolio.errors.any?
+	div#error_explanation
+		div.alert.alert-error.no-padding-margin
+			| The form contains the following error(s):
+		ul
+			- @portfolio.errors.full_messages.each do |msg|
+				li
+					= msg

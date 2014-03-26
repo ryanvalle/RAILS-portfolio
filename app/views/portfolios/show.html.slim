@@ -1,0 +1,17 @@
+= provide(:title,"#{@item.mediatype.upcase} | #{@item.title.upcase}")
+div.mini_header
+	div.mini_header_background
+
+div.container-fluid.showcase
+	div.image-border
+		img.img-responsive src="#{return_content(@item)}"
+	div.container.some-top-padding-margin-center
+		h1.no-padding-margin
+			strong
+				= @item.title
+		p.no-padding-margin
+			= @item.description
+	section
+		div.divider
+		= render partial: 'portfolios/dirphotography'
+

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324044345) do
+ActiveRecord::Schema.define(version: 20140325220745) do
+
+  create_table "portfolios", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "mediatype"
+    t.string   "location"
+    t.boolean  "publish"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "settings", force: true do |t|
     t.string   "sitetitle"
