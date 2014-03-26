@@ -1,9 +1,8 @@
 - @photo.each_with_index do |n,index| 
-	div.col-xs-4.text-center.some-padding
+	div.col-xs-6.col-sm-4.text-center.some-padding
 		a  href="#{photography_path}/#{n.id}"
-			div.image-crop style="background: url(#{n.location}) no-repeat; background-size: cover"
+			div.image-crop.thum style="background: url(#{n.location}) no-repeat; background-size: cover"
 		p.no-padding-margin
 			strong #{n.title}
 		a  href="#{photography_path}/#{n.id}"
 			small View Details
-		/ p #{n.description}
