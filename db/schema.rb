@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140325220745) do
 
   create_table "portfolios", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.string   "mediatype"
     t.string   "location"
     t.boolean  "publish"
