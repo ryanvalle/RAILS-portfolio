@@ -9,6 +9,9 @@ div.container-fluid.showcase
 		h1.no-padding-margin
 			strong
 				= @item.title
+		- if !@item.link.blank?
+			p.no-padding-margin
+				= link_to "Visit Site", @item.link, target: "_blank"
 		p.no-padding-margin
 			= @item.description
 	section

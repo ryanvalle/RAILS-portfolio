@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
 	def index
+		@all_limit_3 = Portfolio.all.limit(3).order('updated_at DESC')
 		@web_limit_3 = Portfolio.where(:mediatype => "Web", :publish => true).limit(3).order('updated_at DESC')
 		@photo_limit_3 = Portfolio.where(:mediatype => "Photography", :publish => true).limit(3).order('updated_at DESC')
 		@video_limit_3 = Portfolio.where(:mediatype => "Video", :publish => true).limit(3).order('updated_at DESC')

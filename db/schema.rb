@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325220745) do
+ActiveRecord::Schema.define(version: 20140327032942) do
 
   create_table "portfolios", force: true do |t|
     t.string   "title"
@@ -21,7 +21,11 @@ ActiveRecord::Schema.define(version: 20140325220745) do
     t.boolean  "publish"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
+    t.string   "vanity_url"
   end
+
+  add_index "portfolios", ["vanity_url"], name: "index_portfolios_on_vanity_url"
 
   create_table "settings", force: true do |t|
     t.string   "sitetitle"

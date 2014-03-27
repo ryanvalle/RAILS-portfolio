@@ -1,0 +1,12 @@
+= provide(:title,'WEB DEVELOPMENT')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+section
+	div.container
+		= render partial: 'portfolios/dirweb'
+

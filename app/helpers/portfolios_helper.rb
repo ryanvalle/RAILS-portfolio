@@ -9,7 +9,7 @@ module PortfoliosHelper
   src='http://www.youtube.com/embed/#{source.location}?autoplay=1'
   frameborder='0'></iframe></div>".html_safe
 		when "web"
-			# render web
+			image_tag(return_content(source), class:"img-responsive")
 		end
 	end
 

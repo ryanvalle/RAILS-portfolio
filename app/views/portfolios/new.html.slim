@@ -20,6 +20,12 @@ section
 			= f.label :location
 			= f.text_field :location, class:"form-control"
 			br
+			= f.label :link, "Link Reference (Optional - Web Only)"
+			= f.text_field :link, class:"form-control"
+			br
+			= f.label :vanity_url, "Vanity URL (Optional)"
+			= f.text_field :vanity_url, class:"form-control"
+			br
 			= f.label :mediatype
 				| Media Type
 			= f.select :mediatype, options_for_select([ "", "Photography","Web","Video"]), class:"form-control"

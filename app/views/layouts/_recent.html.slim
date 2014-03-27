@@ -2,8 +2,15 @@ section
 	div.container.margin-center
 		h3.no-padding-margin
 			strong Recent Stuff
-		h1.text-center
-			| temporary spacing content for 3 or 4 most recent items posted to portfolio
+		- @all_limit_3.each do |n| 
+			div.col-sm-4.text-center.some-padding
+				= put_content_home(n)
+				p.no-padding-margin
+					strong #{n.title}
+				p.no-padding-margin
+					strong #{n.mediatype}
+				a  href="#{photography_path}/#{n.id}"
+					small View Details
 
 	div.divider
 	div &nbsp;

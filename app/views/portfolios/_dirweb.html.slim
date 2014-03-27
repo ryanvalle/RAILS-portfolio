@@ -1,0 +1,8 @@
+- @web.each_with_index do |n,index| 
+	div.col-xs-6.col-sm-4.text-center.some-padding
+		a  href="#{web_path}/#{n.id}"
+			div.image-crop.thum style="background: url(#{n.location}) no-repeat; background-size: cover"
+		p.no-padding-margin
+			strong #{n.title}
+		a  href="#{web_path}/#{n.id}"
+			small View Details
