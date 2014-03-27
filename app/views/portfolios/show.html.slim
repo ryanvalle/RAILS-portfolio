@@ -4,7 +4,7 @@ div.mini_header
 
 div.container-fluid.showcase
 	div.image-border
-		img.img-responsive src="#{return_content(@item)}"
+		= put_content(@item)
 	div.container.some-top-padding-margin-center
 		h1.no-padding-margin
 			strong
@@ -12,6 +12,7 @@ div.container-fluid.showcase
 		p.no-padding-margin
 			= @item.description
 	section
-		div.divider
-		= render partial: 'portfolios/dirphotography'
+		div.container
+			div.divider
+				= render partial: "portfolios/dir#{@item.mediatype.downcase}"
 

@@ -1,0 +1,8 @@
+- @video.each_with_index do |n,index| 
+	div.col-xs-6.col-sm-4.text-center.some-padding
+		a  href="#{video_path}/#{n.id}"
+			div.image-crop.thum style="background: url(http://img.youtube.com/vi/#{n.location}/mqdefault.jpg) no-repeat; background-size: cover"
+		p.no-padding-margin
+			strong #{n.title}
+		a  href="#{video_path}/#{n.id}"
+			small View Details

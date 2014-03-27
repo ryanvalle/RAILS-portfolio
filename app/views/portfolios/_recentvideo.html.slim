@@ -1,6 +1,9 @@
 - @video_limit_3.each do |n| 
-	div.col-sm-4.text-center
-		img src="#{n.location}"
-		p
+	div.col-sm-4.text-center.some-padding
+		a  href="#{video_path}/#{n.id}"
+			div.image-crop style="background: url(http://img.youtube.com/vi/#{n.location}/mqdefault.jpg) no-repeat; background-size: cover; "
+		p.no-padding-margin
 			strong #{n.title}
-		p #{n.description}
+		a  href="#{video_path}/#{n.id}"
+			small View Details
+		p #{truncate(n.description, length: 100, omission: "...")}
