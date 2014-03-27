@@ -1,0 +1,30 @@
+= provide(:title,'CONTACT')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+section
+	div.container
+		div.col-sm-8
+			- flash.each do |key,value|
+				= content_tag(:div, value, class:"alert alert-#{key}")
+			p
+				strong
+					| Use the form below to quicky get in touch with me via email
+			= form_for(@contact, :html => {class:"form-horizontal"}, method: :post, :url => contact_path) do |f| 
+				= f.label :name
+				= f.text_field :name, class: "form-control"
+				br
+				= f.label :email
+				= f.text_field :email, class: "form-control"
+				br
+				= f.label :message
+				= f.text_area :message, class: "form-control"
+				br
+				= f.submit "Save", class:"btn btn-primary pull-right"
+
+		div.col-sm-4
+			p
+				strong Let's Connect!
