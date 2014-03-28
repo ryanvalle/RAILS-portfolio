@@ -26,7 +26,7 @@ section
 							= link_to n.title, "#{root_url}#{n.mediatype.downcase}/#{n.id}"
 						td 
 							= n.mediatype
-						td style="color:#{n.publish ? 'red' : 'green'};"
+						td style="color:#{n.publish ? 'green' : 'red'};"
 							strong
 								= n.publish.to_s.upcase
 						td
