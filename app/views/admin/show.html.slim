@@ -23,7 +23,7 @@ section
 				- @portfolio.each do |n|
 					tr
 						td
-							= n.title
+							= link_to n.title, "#{root_url}#{n.mediatype.downcase}/#{n.id}"
 						td 
 							= n.mediatype
 						td style="color:#{n.publish ? 'red' : 'green'};"

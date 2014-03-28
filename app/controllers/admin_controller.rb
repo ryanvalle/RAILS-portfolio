@@ -61,7 +61,7 @@ class AdminController < ApplicationController
 		def signed_in_user
 			unless signed_in?
 				store_location
-				redirect_to admin_path, notice: "Please sign in." 
+				redirect_to "#{root_url}admin", notice: "Please sign in." 
 			end
 		end
 end
