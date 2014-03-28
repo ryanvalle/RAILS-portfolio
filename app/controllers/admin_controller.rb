@@ -18,7 +18,7 @@ class AdminController < ApplicationController
 	end
 
 	def show
-		@portfolio = Portfolio.all
+		@portfolio = Portfolio.all.order('updated_at DESC')
 	end
 
 	def edit
