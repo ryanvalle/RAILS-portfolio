@@ -8,9 +8,12 @@ div.mini_header
 section
 	div.container
 		p Use the following form to add new portfolio content to the site
+		= link_to "RETURN TO ADMIN HOME", "#{root_url}admin"
 		div.divider
+		- flash.each do |key,value|
+			= content_tag(:div, value, class:"alert alert-#{key}")
 		= render partial: 'shared/errors'
-		= form_for(@portfolio, :html => {class:"form-horizontal"}) do |f| 
+		= form_for(@portfolio, :url => admin_new_path, :html => {class:"form-horizontal"}) do |f| 
 			= f.label :title
 			= f.text_field :title, class:"form-control"
 			br
@@ -33,5 +36,5 @@ section
 			= f.label :publish
 			= f.check_box :publish
 			br
-			= f.submit "Save", class:"pull-right"
+			= f.submit "Save", class:"btn btn-primary pull-right"
 			br

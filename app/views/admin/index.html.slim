@@ -1,0 +1,27 @@
+= provide(:title,'ADMIN')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+- flash.each do |key,value|
+	= content_tag(:div, value, class:"alert alert-#{key}")
+
+div.container
+	- if !signed_in?
+		h1 Login
+		= form_for(:admin, url: admin_auth_path) do |f|
+			= f.label :name
+			= f.text_field :name, class:"form-control"
+			br
+			= f.label :password
+			= f.password_field :password,class:"form-control"
+			br
+			= f.submit "Login", class: "btn btn-primary btn-large"
+	- else
+		h1 Welcome to the Admin Panel
+		div.col-sm-12
+		a.btn.btn-primary.btn-lg.btn-full-wide href="#{admin_show_path}" Manage Content
+		a.btn.btn-primary.btn-lg.btn-full-wide href="#{admin_new_path}" Add New Content

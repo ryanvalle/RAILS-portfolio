@@ -12,20 +12,6 @@ class PortfoliosController < ApplicationController
 		@web = Portfolio.where(:mediatype => "Web", :publish => true).order('updated_at DESC')
 	end
 
-	def new
-		@portfolio = Portfolio.new
-	end
-
-	def create
-		@portfolio = Portfolio.new(params[:portfolio])
-		if @portfolio.save
-			flash[:success] = "Successfully posted new item"
-			redirect_to portfolios_path
-		else
-			render 'portfolios/new'
-		end
-	end
-
 	def photography
 		@photo = Portfolio.where(:mediatype => "Photography", :publish => true).order('updated_at DESC')
 	end

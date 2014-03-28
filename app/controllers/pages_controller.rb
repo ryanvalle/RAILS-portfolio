@@ -18,7 +18,7 @@ class PagesController < ApplicationController
 			ContactMailer.contact_message(@contact).deliver
 			redirect_to contact_path
 		else 
-			flash[:error] = "Error sending message. Please fill out all fields or send an email to <a href='mailto:#{Setting.first.siteemail}'>#{Setting.first.siteemail}</a>.".html_safe
+			flash[:danger] = "Error sending message. Please fill out all fields or send an email to <a href='mailto:#{Setting.first.siteemail}'>#{Setting.first.siteemail}</a>.".html_safe
 				redirect_to contact_path
 		end
 	end

@@ -1,0 +1,36 @@
+= provide(:title,'ADMIN - DIRECTORY')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+			
+- flash.each do |key,value|
+	= content_tag(:div, value, class:"alert alert-#{key}")
+
+section 
+	div.container
+
+		table.table.table-striped
+			thead
+				tr
+					th Title
+					th Media Type
+					th Publish
+					th Manage
+			tbody
+				- @portfolio.each do |n|
+					tr
+						td
+							= n.title
+						td 
+							= n.mediatype
+						td style="color:#{n.publish ? 'red' : 'green'};"
+							strong
+								= n.publish.to_s.upcase
+						td
+							= link_to "Edit", edit_admin_path(n)
+							|  / 
+							= link_to "Delete", "#"
+			

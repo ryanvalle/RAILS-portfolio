@@ -1,0 +1,44 @@
+= provide(:title,'ADMIN - EDIT')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+section
+	div.container
+		h1.no-padding-margin #{@item.title}
+		p Use the form below to update the item #{@item.title}
+
+		= link_to "RETURN TO ADMIN HOME", "#{root_url}admin"
+		div.divider
+		- flash.each do |key,value|
+			= content_tag(:div, value, class:"alert alert-#{key}")
+		div.divider
+
+		= form_for(@portfolio, html: {class:"form-horizontal"}, :url => admin_path(@portfolio)) do |f|
+			= f.label :title
+			= f.text_field :title, class:"form-control"
+			br
+			= f.label :description
+			= f.text_area :description, class:"form-control"
+			br
+			= f.label :location
+			= f.text_field :location, class:"form-control"
+			br
+			= f.label :link, "Link Reference (Optional - Web Only)"
+			= f.text_field :link, class:"form-control"
+			br
+			= f.label :vanity_url, "Vanity URL (Optional)"
+			= f.text_field :vanity_url, class:"form-control"
+			br
+			= f.label :mediatype
+				| Media Type
+			= f.select :mediatype, options_for_select([ "", "Photography","Web","Video"],@portfolio.mediatype), class:"form-control"
+			br
+			= f.label :publish
+			= f.check_box :publish
+			br
+			= f.submit "Save", class:"btn btn-primary pull-right"
+			br
