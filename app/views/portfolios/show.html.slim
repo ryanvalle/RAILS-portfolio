@@ -13,7 +13,7 @@ div.container-fluid.showcase
 			p.no-padding-margin
 				= link_to "Visit Site", @item.link, target: "_blank"
 		p.no-padding-margin
-			= @item.description
+			= @item.description.html_safe
 	section
 		div.container
 			div.divider
