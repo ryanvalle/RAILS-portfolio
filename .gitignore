@@ -15,5 +15,3 @@
 /log/*.log
 /tmp
 
-# Ignore portfolio pages
-/app/assets/images/portfolio
