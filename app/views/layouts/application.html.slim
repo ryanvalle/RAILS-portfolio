@@ -5,11 +5,34 @@ html
 			= full_title(yield(:title))
 		base src="#{root_url}"
 		meta name="viewport" content="width=device-width, initial-scale=1"
+		meta name="google-site-verification" content="YJNLPHtoBoATfSQxi5Qds2zEn93uVxEXBkwyToUP938"
+		meta property="og:title" content="Ryan Valle | Multimedia Specialist"
+		meta property="og:type" content="website"
+		meta property="og:url" content="http://www.ryanvalle.me"
+
+		meta property="og:site_name" content="Ryan Valle || Multimedia Specialist"
+		meta property="og:image" content="#{root_url}assets/og_photo.jpg" 
+		meta property="og:description" content="A multimedia specialist with experience in video production, photography, and web development (& some design).."
+		meta name="alexaVerifyID" content="UgQfL4PgxeOBmcz-pjWcGSteoZ4" 
+		meta name="robots" content="index,follow"
+		meta name="Revisit-After" content="7 days" 
+		meta name="city" content="Los Angeles" 
+		meta name="country" content="United States (USA)" 
+		meta name="state" content="CA" 
+		meta name="zip" content="91343" 
+		meta name="subject" content="Multimedia Specialist" 
+		meta name="author" content="Ryan Valle" 
+		meta name="copyright" content="Ryan Valle" 
+		meta name="keywords" content="professional video editor, final cut pro video editor, multimedia production services, Ryan Valle, web design, web development, html web editor, digital media production, multimedia production, php developer, front end developer" 
+		meta name="description" content="A multimedia specialist with experience in video production, photography, and web development (& some design)." 
+
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 		= javascript_include_tag "application", "data-turbolinks-track" => true
+		= javascript_include_tag "googleanalytics"
 		/[If It IE 9]
 			script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
 		= csrf_meta_tags
+
 
 	body
 		div#wrap
@@ -18,4 +41,3 @@ html
 				= yield
 
 		= render partial: 'layouts/footer'
-		
