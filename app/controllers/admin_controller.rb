@@ -13,7 +13,7 @@ class AdminController < ApplicationController
 		else
 			flash[:danger] = "Invalid username/password"
 			sign_out
-			redirect_to admin_path
+			redirect_to "#{root_url}admin"
 		end
 	end
 
