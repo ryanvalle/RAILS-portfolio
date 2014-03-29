@@ -109,7 +109,7 @@ h2.sitedescription {
 div { 
 	.header {
 		text-align: center;
-		height: 400px;
+		height: 300px;
 		@include header_styling;
 	}
 	.header_background, .mini_header_background {
@@ -118,7 +118,7 @@ div {
 	}
 	.header_wrap {
 		position: relative;
-		top: 150px;
+		top: 80px;
 	}
 	.mini_header {
 		@include header_styling;
