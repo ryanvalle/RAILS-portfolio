@@ -29,7 +29,7 @@ html
 		= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 		= javascript_include_tag "application", "data-turbolinks-track" => true
 		= javascript_include_tag "googleanalytics"
-		/[If It IE 9]
+		/[if lt IE 9]
 			script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
 		= csrf_meta_tags
 
