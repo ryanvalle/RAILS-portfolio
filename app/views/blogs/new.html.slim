@@ -1,0 +1,28 @@
+= provide(:title,"BLOG - CREATE")
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+section
+	div.container
+		p Create a new blog post using the form below
+		= link_to "RETURN TO ADMIN HOME", "#{root_url}admin"
+		div.divider
+		- flash.each do |key,value|
+			= content_tag(:div, value, class:"alert alert-#{key}")
+		= form_for(@blog, :html => {class:"form-horizontal"}) do |f|
+			= f.hidden_field :user_id, value: current_user.id.to_i
+			= f.label :title
+			= f.text_field :title, class:"form-control"
+			br
+			= f.label :body
+			= f.text_area :body, class:"form-control"
+			br
+			= f.label :publish
+			= f.check_box :publish
+			br
+			= f.submit "Save", class: "btn btn-primary pull-right"
+

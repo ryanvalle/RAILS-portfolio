@@ -1,0 +1,33 @@
+= provide(:title,"BLOG - LIST")
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+section
+	div.container
+		p Create a new blog post using the form below
+		table.table.table-striped
+			thead
+				tr
+					th Title
+					th Preview
+					th Publish
+					th Manage
+			tbody
+				- @blog.each do |n|
+					tr
+						td
+							= link_to n.title, blog_article_path(n), target:'_blank'
+						td 
+							= truncate(n.body, length: 100, omission:'...')
+						td style="color:#{n.publish ? 'green' : 'red'};"
+							strong
+								= n.publish.to_s.upcase
+						td
+							= link_to "Edit", blog_edit_path(n)
+							|  / 
+							= link_to "Delete", "#"
+

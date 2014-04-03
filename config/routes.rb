@@ -1,7 +1,8 @@
 RailsPortfolio::Application.routes.draw do
   root 'pages#index'
   # resources :portfolios
-  resources :admin
+  resources :admin, path: 'admin'
+  resources :blogs, path: 'blog'
   
   match '/resume', to: 'pages#resume', via: [:get]
   match '/contact', to: 'pages#contact', via: [:get]
@@ -22,4 +23,8 @@ RailsPortfolio::Application.routes.draw do
   match '/admin/show/edit/:id', to: 'admin#edit',via: [:get]
   match '/admin', to: 'admin#update', via: [:patch]
   match '/signout', to: 'admin#destroy', via: [:delete]
+
+  match '/blog/article/:id', to: 'blogs#article', via: [:get], as: 'blog_article'
+  match '/blog/show', to: 'blogs#show', via: [:get]
+  match '/blog/edit/:id', to: 'blogs#edit', via: [:get], as: 'blog_edit'
 end
