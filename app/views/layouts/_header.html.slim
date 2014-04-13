@@ -26,12 +26,16 @@ header class="navbar navbar-inverse navbar-static-top"
 
 					li class=(is_active?('CONTACT',yield(:title)) ? 'active' : 'inactive')
 						a href=contact_path CONTACT
-					/ li class=(is_active?('BLOG',yield(:title)) ? 'active' : 'inactive')
-					/ 	a href="#" BLOG
+					li class=(is_active?('BLOG',yield(:title)) ? 'active' : 'inactive')
+					 	= link_to "BLOG", blog_home_path
+					/	a href="#" BLOG
 					- if signed_in?
 						li id="fat-menu" class="dropdown" 
 							a href="#" class="dropdown-toggle" data-toggle="dropdown" ADMIN<b class="caret"></b>
 							ul class="dropdown-menu"
+								li 
+									= link_to "Admin Home", admin_home_path
+								div.divider
 								li 
 									a href="#{admin_show_path}" Manage Content
 								li 
@@ -39,6 +43,9 @@ header class="navbar navbar-inverse navbar-static-top"
 								div.divider
 								li
 									= link_to "Manage Blogs", blog_show_path
+								li
+									= link_to "Add Blog Post", blog_new_path
+								div.divider
 								li 
 									= link_to "Logout", signout_path, method: "delete"
 

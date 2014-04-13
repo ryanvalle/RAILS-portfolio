@@ -6,15 +6,19 @@ div.mini_header
 		h2.title.visible-xs
 			= yield(:title)
 
+- flash.each do |key,value|
+	= content_tag(:div, value, class:"alert alert-#{key}")
+
 section
 	div.container
-		p Create a new blog post using the form below
+		= link_to "RETURN TO ADMIN HOME", admin_home_path
 		table.table.table-striped
 			thead
 				tr
 					th Title
 					th Preview
 					th Publish
+					th Date
 					th Manage
 			tbody
 				- @blog.each do |n|
@@ -26,6 +30,8 @@ section
 						td style="color:#{n.publish ? 'green' : 'red'};"
 							strong
 								= n.publish.to_s.upcase
+						td
+							p #{n.updated_at}
 						td
 							= link_to "Edit", blog_edit_path(n)
 							|  / 

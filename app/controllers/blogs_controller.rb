@@ -1,6 +1,10 @@
 class BlogsController < ApplicationController
 	before_filter :signed_in_user, only: [:new, :edit, :update, :create, :destroy, :show]
 
+	def index
+		@blog = Blog.all.where(publish:true).order('created_at DESC')
+	end
+
 	def new
 		@blog = Blog.new
 	end
@@ -9,15 +13,30 @@ class BlogsController < ApplicationController
 		@blog = Blog.new(params[:blog])
 		if @blog.save 
 			flash[:success] = "Successfully saved <strong>#{@blog.title}</strong>".html_safe
-			redirect_to admin_path(@blog)
+			redirect_to blog_show_path
 		else
 			flash[:danger] = "Error saving new content"
 			render 'edit'
 		end
 	end
 
+	def edit
+		@blog = Blog.find(params[:id])
+	end
+
+	def update
+		@blog = Blog.find(params[:id])
+		if @blog.update_attributes(params[:blog])
+			flash[:success] = "#{@blog.title} was successfully saved"
+			redirect_to blog_show_path
+		else
+			flash[:danger] = "Error saving. Check that all fields are properly filled"
+			redirect_to blog_edit_path(@blog)
+		end
+	end
+
 	def show
-		@blog = Blog.all
+		@blog = Blog.all.order('updated_at DESC')
 	end
 
 	def article

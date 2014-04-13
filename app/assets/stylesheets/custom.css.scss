@@ -147,6 +147,12 @@ div {
 		width: 100%;
 		height: 100px;
 	}
+	.blog {
+		padding: 10px 0;
+		margin: 10px 0;
+		border-bottom: 1px solid $gray;
+		overflow:hidden;
+	}
 }
 
 /* sections */

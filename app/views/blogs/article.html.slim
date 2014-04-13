@@ -1,13 +1,20 @@
-= provide(:title,"BLOG - LIST")
+= provide(:title,'BLOG')
 div.mini_header
 	div.mini_header_background
 		h1.title.hidden-xs
 			= yield(:title)
 		h2.title.visible-xs
 			= yield(:title)
-
+div.container
+	span.pull-right
+		= link_to "return to all articles", blog_home_path
 section
 	div.container
-		p Create a new blog post using the form below
-
-
+		h2.no-padding-margin
+			= @blog.title
+		p
+			small
+				| Posted #{@blog.created_at}
+		p.pull-left
+			= @blog.body.html_safe
+		

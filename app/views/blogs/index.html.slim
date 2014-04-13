@@ -1,0 +1,23 @@
+= provide(:title,'BLOG')
+div.mini_header
+	div.mini_header_background
+		h1.title.hidden-xs
+			= yield(:title)
+		h2.title.visible-xs
+			= yield(:title)
+
+section
+	div.container
+		- @blog.each do |b|
+			div.blog
+				h3.no-padding-margin
+					= link_to b.title, blog_article_path(b.id)
+				p
+					small
+						= b.created_at
+				p
+					/ TRUNCATE HERE NEEDS TO BE HTML_SAFE
+					/ BREAKS WHEN TRUNCATE IS TRUE
+					= truncate(b.body.html_safe, length: 500, omission: '...')
+				p.pull-right
+					= link_to 'read more', blog_article_path(b.id)
