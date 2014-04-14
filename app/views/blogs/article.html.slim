@@ -14,7 +14,7 @@ section
 			= @blog.title
 		p
 			small
-				| Posted #{@blog.created_at}
+				| Posted #{blog_date(@blog.created_at)}
 		p.pull-left
 			= @blog.body.html_safe
 		
