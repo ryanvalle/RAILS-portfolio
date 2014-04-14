@@ -18,6 +18,6 @@ section
 				p
 					/ TRUNCATE HERE NEEDS TO BE HTML_SAFE
 					/ BREAKS WHEN TRUNCATE IS TRUE
-					= truncate(b.body.html_safe, length: 500, omission: '...')
+					= truncate_html(line_break(b.body).html_safe, length: 500, omission: '...')
 				p.pull-right
 					= link_to 'read more', blog_article_path(b.id)
