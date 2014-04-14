@@ -16,10 +16,10 @@ section
 				p
 					small
 						= blog_date(b.created_at)
-				p.text-right
+				p
 					/ TRUNCATE HERE NEEDS TO BE HTML_SAFE
 					/ BREAKS WHEN TRUNCATE IS TRUE
 					= truncate_html(line_break(b.body).html_safe, length: 500, omission: '...')
-				p.pull-right
+				p.text-right
 					= link_to 'read more', blog_article_path(b.id)
 		= will_paginate @blog
