@@ -16,5 +16,5 @@ section
 			small
 				| Posted #{blog_date(@blog.created_at)}
 		p.pull-left
-			= @blog.body.html_safe
+			= line_break(@blog.body).html_safe
 		
