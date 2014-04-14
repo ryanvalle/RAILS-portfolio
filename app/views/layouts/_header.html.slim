@@ -27,7 +27,7 @@ header class="navbar navbar-inverse navbar-static-top"
 					li class=(is_active?('CONTACT',yield(:title)) ? 'active' : 'inactive')
 						a href=contact_path CONTACT
 					li class=(is_active?('BLOG',yield(:title)) ? 'active' : 'inactive')
-					/ 	= link_to "BLOG", blog_home_path
+					 	= link_to "BLOG", blog_home_path
 					- if signed_in?
 						li id="fat-menu" class="dropdown" 
 							a href="#" class="dropdown-toggle" data-toggle="dropdown" ADMIN<b class="caret"></b>
