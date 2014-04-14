@@ -8,6 +8,7 @@ div.mini_header
 
 section
 	div.container
+		= will_paginate @blog
 		- @blog.each do |b|
 			div.blog
 				h3.no-padding-margin
@@ -21,3 +22,4 @@ section
 					= truncate_html(line_break(b.body).html_safe, length: 500, omission: '...')
 				p.pull-right
 					= link_to 'read more', blog_article_path(b.id)
+		= will_paginate @blog

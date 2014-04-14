@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
 	before_filter :signed_in_user, only: [:new, :edit, :update, :create, :destroy, :show]
 
 	def index
-		@blog = Blog.all.where(publish:true).order('created_at DESC')
+		@blog = Blog.all.where(publish:true).order('created_at DESC').paginate(page: params[:page],per_page: 5)
 	end
 
 	def new
