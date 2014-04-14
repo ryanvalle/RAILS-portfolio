@@ -14,7 +14,7 @@ section
 					= link_to b.title, blog_article_path(b.id)
 				p
 					small
-						= b.created_at
+						= blog_date(b.created_at)
 				p
 					/ TRUNCATE HERE NEEDS TO BE HTML_SAFE
 					/ BREAKS WHEN TRUNCATE IS TRUE
