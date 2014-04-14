@@ -16,7 +16,7 @@ section
 				p
 					small
 						= blog_date(b.created_at)
-				p
+				p.text-right
 					/ TRUNCATE HERE NEEDS TO BE HTML_SAFE
 					/ BREAKS WHEN TRUNCATE IS TRUE
 					= truncate_html(line_break(b.body).html_safe, length: 500, omission: '...')
