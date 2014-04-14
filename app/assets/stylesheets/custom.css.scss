@@ -166,6 +166,12 @@ section {
 		border-bottom: 1px solid #ccc;
 	}
 }
+.blog-img {
+	width: 100%;
+	border: 5px solid $white;
+	margin: 10px;
+	@include box-shadow(0, 0, 5px, #000);
+}
 footer {
 	color: $gray;
 	p {
